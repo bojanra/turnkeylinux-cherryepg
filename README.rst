@@ -6,7 +6,7 @@ cherryEPG - The simple modular EPG generator
 This appliance actually provides `cherryEPG`_ and includes all 
 the standard features in `TurnKey MySQL`_, and on top of that:
 
-- EPG generator/builder
+- DVB EPG generator/builder
 - Web Interface for application management
 
 Credentials *(passwords set at first boot)*

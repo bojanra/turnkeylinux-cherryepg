@@ -3,6 +3,8 @@
 DB_PASS=$(mcookie)
 REMOTE_USER=remote
 
+CHERRYEPG_USER=cherryepg
+
 # configure mysql to listen on all interfacesq
 sed -i "s|^bind-address|#bind-address|" /etc/mysql/mariadb.conf.d/50-server.cnf
 
@@ -45,8 +47,7 @@ adduser cherryepg cherryweb
 find /usr/local/src/authors -type d -exec chmod o=rx {} \;
 find /usr/local/src/authors -type f -exec chmod o=r {} \;
 
-#runuser -l cherryepg -c 'cpanm -L "/var/lib/cherryepg/perl5" -M "/usr/local/srv" --installdeps --notest --quiet .'
-runuser -l cherryepg -c 'cpanm -M file:///usr/local/src --installdeps --notest .'
+runuser -l cherryepg -c 'cpanm -M file:///usr/local/src --installdeps --notest --quiet .'
 
 # enable ssl for cherryWeb
 ln -s /lib/systemd/system/stunnel4@.service /etc/systemd/system/multi-user.target.wants/stunnel4@cherryweb.service

@@ -1,0 +1,24 @@
+MAILTO=""
+SHELL=/bin/bash
+PATH=/var/lib/cherryepg/cherryTool/bin
+PERL5LIB=/var/lib/cherryepg/perl5/lib/perl5:/var/lib/cherryepg/cherryTool/lib
+PERL_LOCAL_LIB_ROOT=/var/lib/cherryepg/perl5
+DANCER_ENVIRONMENT=production
+
+# Standard fetching
+55 * * * *    cherryepg   cherryTool -G hourly
+35 6 * * *    cherryepg   cherryTool -G daily
+45 6 * * sat  cherryepg   cherryTool -G weekly
+55 6 28 * *   cherryepg   cherryTool -G monthly
+
+# Kepp database clean (get rid of old entries)
+20 3 * * tue  cherryepg   cherryTool -O
+
+# Clean more than 100 days old files from ingest
+20 4 * * tue  cherryepg   find /var/lib/cherryepg/ingest/ -type f -mtime +60 -exec rm {} \;
+
+# Clean more than 7 days old files from the session directory
+40 3 * * tue  cherryepg   find /var/lib/cherryepg/app/sessions/ -type f -mtime +7 -exec rm {} \;
+
+# Update carousel files
+* * * * *     cherryepg   cherryTool -M

@@ -1,0 +1,8 @@
+Control Panel: https://$ipaddr
+Web shell:  https://$ipaddr:12320
+Webmin:     https://$ipaddr:12321
+Adminer:    https://$ipaddr:12322
+cherryEPG:  https://$ipaddr:12323
+SSH/SFTP:   root@$ipaddr (port 22)
+MySQL*:     mysql -u remote -h $ipaddr -p
+     * - SSL enabled/required - see docs

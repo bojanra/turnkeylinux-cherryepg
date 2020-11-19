@@ -1,0 +1,8 @@
+/var/lib/cherryepg/log/access.log {
+    daily
+    rotate 7
+    missingok
+    compress
+    copytruncate
+    su cherryepg cherryepg
+}

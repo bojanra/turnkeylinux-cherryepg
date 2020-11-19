@@ -1,0 +1,8 @@
+#!/bin/bash -e
+# set cherryepg user password
+
+. /etc/default/inithooks
+
+[ -e $INITHOOKS_CONF ] && . $INITHOOKS_CONF
+$INITHOOKS_PATH/bin/cherryepg.py --pass="$APP_PASS"
+

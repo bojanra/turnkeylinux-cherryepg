@@ -1,0 +1,19 @@
+#include <turnkey/base>
+#include <turnkey/mysql>
+
+adminer
+lighttpd                /* landing page and Adminer powered by lighty */
+php-cgi                 /* needed for lighty cgi and adminer depend */
+php-mysql               /* needed for adminer mysql support */
+
+build-essential
+cpanminus
+libauthen-pam-perl
+libcurl4-gnutls-dev
+libexpat1-dev
+libgd-perl
+libpth20
+libsoftware-license-perl
+make
+zlib1g-dev
+

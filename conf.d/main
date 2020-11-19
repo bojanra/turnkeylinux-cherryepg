@@ -1,0 +1,61 @@
+#!/bin/sh -ex
+
+DB_PASS=$(mcookie)
+REMOTE_USER=remote
+
+# configure mysql to listen on all interfacesq
+sed -i "s|^bind-address|#bind-address|" /etc/mysql/mariadb.conf.d/50-server.cnf
+
+# generate SSL certs for MySQL remote connections (rerun on firstboot)
+/usr/lib/inithooks/firstboot.d/20regen-mysql-certs
+
+# allow remote connections & enable SSL by default
+service mysql start
+mysql -u root -e "GRANT ALL PRIVILEGES ON *.* TO '$REMOTE_USER'@'%' IDENTIFIED BY '$DB_PASS';"
+mysql -u root -e "FLUSH PRIVILEGES;"
+turnkey-mysql-ssl enable
+service mysql stop
+
+# enable tklcp site
+sed -Ei "s|^(server.document-root.*=).*|\1 \"/var/www\"|" /etc/lighttpd/lighttpd.conf
+lighty-enable-mod tklcp || true
+
+# cp /usr/local/src/cherryepg.deb /var/lib/cherryepg/
+
+# make the cherryEPG environment
+# the user
+adduser --system --home /var/lib/cherryepg --no-create-home --group --shell /bin/bash cherryepg
+adduser cherryepg shadow
+chown cherryepg:cherryepg -R /var/lib/cherryepg
+find /var/lib/cherryepg -type d -exec chmod 770 {} \;
+
+# directories
+cd /var/lib/cherryepg
+mkdir carousel
+mkdir ingest
+mkdir log
+mkdir scheme
+mkdir stock
+chown cherryepg:cherryepg *
+
+# add cherryweb group used to allow access to web interface
+addgroup cherryweb
+adduser cherryepg cherryweb
+
+find /usr/local/src/authors -type d -exec chmod o=rx {} \;
+find /usr/local/src/authors -type f -exec chmod o=r {} \;
+
+#runuser -l cherryepg -c 'cpanm -L "/var/lib/cherryepg/perl5" -M "/usr/local/srv" --installdeps --notest --quiet .'
+runuser -l cherryepg -c 'cpanm -M file:///usr/local/src --installdeps --notest .'
+
+# enable ssl for cherryWeb
+ln -s /lib/systemd/system/stunnel4@.service /etc/systemd/system/multi-user.target.wants/stunnel4@cherryweb.service
+# systemctl enable stunnel4@cherryweb.service
+# systemctl start stunnel4@cherryweb.service
+
+# install service
+# systemctl daemon-reload
+
+# systemctl enable ringelspiel
+# systemctl enable cherryWeb
+# systemctl start ringelspiel

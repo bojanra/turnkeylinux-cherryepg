@@ -1,0 +1,13 @@
+[Unit]
+Description=ringelSpiel - MPEG2 file carousel
+After=network-online.target
+
+[Service]
+Type=forking
+User=cherryepg
+ExecStart=/usr/sbin/ringelspiel -d -p /var/lib/cherryepg/carousel/
+Restart=on-failure
+RestartSec=10
+
+[Install]
+WantedBy=multi-user.target

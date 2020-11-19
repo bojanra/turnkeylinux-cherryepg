@@ -1,0 +1,15 @@
+[Unit]
+Description=cherryEPG Webserver
+After=network-online.target
+
+[Service]
+Type=simple
+User=cherryepg
+Group=cherryepg
+ExecStart=/var/lib/cherryepg/cherryTool/bin/cherryWeb
+Restart=on-failure
+RestartSec=10
+
+[Install]
+WantedBy=multi-user.target
+

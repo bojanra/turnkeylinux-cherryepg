@@ -22,9 +22,9 @@ mysql -u root -e "GRANT ALL PRIVILEGES ON *.* TO '$REMOTE_USER'@'%' IDENTIFIED B
 turnkey-mysql-ssl enable
 
 # create cherryEPG database and user
-mysql -u root -e "CREATE USER '$CHERRYEPG_DB_USER'@localhost IDENTIFIED BY '$CHERRYEPG_DB_PASS';"
-mysql -u root -e "CREATE DATABASE $CHERRYEPG_DB_NAME DEFAULT CHARACTER SET utf8 DEFAULT COLLATE utf8_general_ci;"
-mysql -u root -e "GRANT ALL PRIVILEGES ON $CHERRYEPG_DB_NAME.* TO '$CHERRYEPG_DB_USER@localhost';"
+mysql -u root -e "CREATE USER '$CHERRYEPG_DB_USER@localhost' IDENTIFIED BY '$CHERRYEPG_DB_PASS';"
+mysql -u root -e "CREATE DATABASE '$CHERRYEPG_DB_NAME' DEFAULT CHARACTER SET utf8 DEFAULT COLLATE utf8_general_ci;"
+mysql -u root -e "GRANT ALL PRIVILEGES ON '$CHERRYEPG_DB_NAME.*' TO '$CHERRYEPG_DB_USER@localhost';"
 mysql -u root -e "FLUSH PRIVILEGES;"
 
 service mysql stop

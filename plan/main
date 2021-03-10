@@ -8,6 +8,7 @@ php-mysql               /* needed for adminer mysql support */
 
 build-essential
 cpanminus
+libdbd-mysql-perl
 libauthen-pam-perl
 libcurl4-gnutls-dev
 libexpat1-dev

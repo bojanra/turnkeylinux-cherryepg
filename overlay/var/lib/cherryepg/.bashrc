@@ -136,10 +136,6 @@ alias gll="git log --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset 
 
 eval "$(perl -I$HOME/perl5/lib/perl5 -Mlocal::lib)"
 export PATH="$PATH:$HOME/cherryTool/bin"
-export PERL5LIB="$PERL5LIB:$HOME/cherryTool/lib"
-export PERL_LOCAL_LIB_ROOT=/var/lib/cherryepg/perl5
-export PERL_MB_OPT='--install_base "/var/lib/cherryepg/perl5"'
-export PERL_MM_OPT=INSTALL_BASE=/var/lib/cherryepg/perl5
 
 export DANCER_ENVIRONMENT=production
 

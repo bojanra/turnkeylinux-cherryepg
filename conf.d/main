@@ -21,9 +21,6 @@ service mysql start
 mysql -u root -e "GRANT ALL PRIVILEGES ON *.* TO '$REMOTE_USER'@'%' IDENTIFIED BY '$DB_PASS';"
 turnkey-mysql-ssl enable
 
-CREATE USER 'cherryepg'@localhost IDENTIFIED BY 'visnja';
-mysql -u root -e "GRANT ALL PRIVILEGES ON cherry_db.* TO cherryepg@localhost;"
-
 # create cherryEPG database and user
 mysql -u root -e "CREATE USER '$CHERRYEPG_DB_USER'@localhost IDENTIFIED BY '$CHERRYEPG_DB_PASS';"
 mysql -u root -e "CREATE DATABASE $CHERRYEPG_DB_NAME DEFAULT CHARACTER SET utf8 DEFAULT COLLATE utf8_general_ci;"

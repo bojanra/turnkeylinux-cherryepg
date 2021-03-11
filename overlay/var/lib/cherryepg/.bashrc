@@ -135,6 +135,7 @@ alias gl="git log --graph --oneline --date-order --decorate --color --all"
 alias gll="git log --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit"
 
 eval "$(perl -I$HOME/perl5/lib/perl5 -Mlocal::lib)"
+export PERL5LIB="$HOME/cherryTool/lib:$PERL5LIB"
 export PATH="$PATH:$HOME/cherryTool/bin"
 
 export DANCER_ENVIRONMENT=production

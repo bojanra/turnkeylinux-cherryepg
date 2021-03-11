@@ -9,6 +9,7 @@ URL="https://cpan.metacpan.org/authors/id/"
 DEST="/usr/local/src/authors/id/"
 
 PACKAGES="A/AB/ABEVERLEY/Dancer2-Plugin-Auth-Extensible-0.709.tar.gz
+A/AB/ABH/Mozilla-CA-20200520.tar.gz
 A/AB/ABH/Net-NTP-1.5.tar.gz
 A/AD/ADAMK/Test-NoWarnings-1.04.tar.gz
 A/AJ/AJGB/MooX-Singleton-1.20.tar.gz
@@ -17,6 +18,7 @@ A/AR/ARC/Ref-Util-0.204.tar.gz
 A/AR/ARISTOTLE/Hash-MultiValue-0.16.tar.gz
 A/AT/ATOOMIC/Clone-0.45.tar.gz
 A/AT/ATOOMIC/Template-Toolkit-3.009.tar.gz
+A/AT/ATOOMIC/TimeDate-2.33.tar.gz
 A/AT/ATOOMIC/XString-0.005.tar.gz
 B/BA/BARBIE/Test-CPAN-Meta-0.25.tar.gz
 B/BI/BIGJ/Test-Warn-0.36.tar.gz
@@ -30,6 +32,7 @@ C/CH/CHANSEN/Authen-Simple-0.5.tar.gz
 C/CH/CHANSEN/Authen-Simple-PAM-0.2.tar.gz
 C/CH/CHANSEN/HTTP-MultiPartParser-0.02.tar.gz
 C/CH/CHOCOLATE/Scope-Guard-0.21.tar.gz
+C/CH/CHRISN/Net-SSLeay-1.90.tar.gz
 C/CJ/CJM/IO-HTML-1.004.tar.gz
 C/CR/CROMEDOME/Dancer2-0.300005.tar.gz
 C/CR/CROMEDOME/Dancer2-Plugin-Ajax-0.400000.tar.gz
@@ -64,6 +67,7 @@ D/DR/DROLSKY/Time-Local-1.30.tar.gz
 D/DS/DSKOLL/MIME-tools-5.509.tar.gz
 E/ES/ESAYM/Time-Piece-1.3401.tar.gz
 E/ET/ETHER/B-Hooks-EndOfScope-0.24.tar.gz
+E/ET/ETHER/B-Hooks-OP-Check-0.22.tar.gz
 E/ET/ETHER/Class-Load-0.25.tar.gz
 E/ET/ETHER/Class-Method-Modifiers-2.13.tar.gz
 E/ET/ETHER/File-ShareDir-Install-0.13.tar.gz
@@ -84,9 +88,11 @@ E/EX/EXODIST/Test-SharedFork-0.35.tar.gz
 E/EX/EXODIST/Test-Simple-1.302183.tar.gz
 F/FR/FRACTAL/Session-Token-1.503.tar.gz
 F/FR/FREW/Sub-Exporter-Progressive-0.001013.tar.gz
+G/GA/GAAS/Digest-HMAC-1.03.tar.gz
 G/GA/GAAS/Encode-Locale-1.05.tar.gz
 G/GA/GAAS/HTTP-Negotiate-6.01.tar.gz
 G/GA/GAAS/WWW-RobotRules-6.02.tar.gz
+G/GB/GBARR/Authen-SASL-2.16.tar.gz
 G/GR/GRANTM/XML-SAX-1.02.tar.gz
 G/GR/GRANTM/XML-SAX-Base-1.09.tar.gz
 G/GR/GRANTM/XML-Simple-2.25.tar.gz
@@ -96,9 +102,12 @@ H/HA/HAARG/Import-Into-1.002005.tar.gz
 H/HA/HAARG/Moo-2.004004.tar.gz
 H/HA/HAARG/MRO-Compat-0.13.tar.gz
 H/HA/HAARG/Role-Tiny-2.002004.tar.gz
+H/HA/HAARG/strictures-2.000006.tar.gz
 H/HA/HAARG/Sub-Quote-2.006006.tar.gz
 H/HA/HAARG/Win32-ShellQuote-0.003001.tar.gz
 H/HM/HMBRAND/Spreadsheet-Read-0.84.tgz
+I/IL/ILMARI/bareword-filehandles-0.007.tar.gz
+I/IL/ILMARI/multidimensional-0.014.tar.gz
 I/IN/INGY/File-Share-0.25.tar.gz
 I/IS/ISHIGAKI/Text-CSV-2.00.tar.gz
 J/JA/JAWNSY/Math-Random-ISAAC-1.004.tar.gz
@@ -204,6 +213,7 @@ S/SH/SHAY/Class-Singleton-1.6.tar.gz
 S/SH/SHLOMIF/File-Remove-1.60.tar.gz
 S/SI/SIFUKURT/Crypt-RC4-2.02.tar.gz
 S/SI/SIMONW/Module-Pluggable-5.2.tar.gz
+S/SU/SULLR/IO-Socket-SSL-2.070.tar.gz
 S/SW/SWEETKID/Plack-Middleware-FixMissingBodyInRedirect-0.12.tar.gz
 S/SW/SWEETKID/Plack-Middleware-RemoveRedundantBody-0.09.tar.gz
 S/SY/SYP/Net-Curl-0.48.tar.gz
@@ -217,8 +227,10 @@ T/TO/TODDR/XML-Parser-2.46.tar.gz
 T/TO/TOKUHIROM/HTTP-Headers-Fast-0.22.tar.gz
 T/TO/TOKUHIROM/Test-Requires-0.11.tar.gz
 T/TO/TOMO/src/Net-SMTPS-0.10.tar.gz
+V/VP/VPIT/indirect-0.39.tar.gz
 V/VP/VPIT/Variable-Magic-0.62.tar.gz
 W/WK/WKI/Test-MockDateTime-0.02.tar.gz
+X/XA/XAOC/ExtUtils-Depends-0.8000.tar.gz
 X/XS/XSAWYERX/Ref-Util-XS-0.117.tar.gz
 Y/YA/YANICK/Parallel-ForkManager-2.02.tar.gz
 Z/ZE/ZEFRAM/Module-Runtime-0.016.tar.gz"

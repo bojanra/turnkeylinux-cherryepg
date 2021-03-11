@@ -63,13 +63,11 @@ runuser -l $CHERRYEPG_USER -c 'cpanm -M file:///usr/local/src --installdeps --no
 # get cherryTools
 cd $CHERRYEPG_HOME
 git clone -b draft --single-branch https://github.com/bojanra/cherryTool
-chown $CHERRYEPG_USER:$CHERRYEPG_USER -R $CHERRYEPG_HOME
-
-# get ringelspiel
-
 
 # initial config
 cp cherryTool/config.yml .
+
+chown $CHERRYEPG_USER:$CHERRYEPG_USER -R $CHERRYEPG_HOME
 
 # enable ssl for $CHERRYEPG_WEB_GRP
 ln -s /lib/systemd/system/stunnel4@.service /etc/systemd/system/multi-user.target.wants/stunnel4@cherryweb.service

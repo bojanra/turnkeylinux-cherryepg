@@ -73,7 +73,7 @@ chown $CHERRYEPG_USER:$CHERRYEPG_USER -R $CHERRYEPG_HOME
 ln -s /lib/systemd/system/stunnel4@.service /etc/systemd/system/multi-user.target.wants/stunnel4@cherryweb.service
 
 # install service
-systemctl daemon-reload
+# systemctl daemon-reload
 
-systemctl enable ringelspiel
-systemctl enable cherryWeb
+# systemctl enable ringelspiel
+# systemctl enable cherryWeb

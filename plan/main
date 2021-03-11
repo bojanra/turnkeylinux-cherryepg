@@ -17,4 +17,4 @@ libpth20
 libsoftware-license-perl
 make
 zlib1g-dev
-
+libssl-dev

@@ -58,7 +58,7 @@ find /usr/local/src/authors -type d -exec chmod o=rx {} \;
 find /usr/local/src/authors -type f -exec chmod o=r {} \;
 
 # install CPAN packages as $CHERRYEPG_USER
-runuser -l $CHERRYEPG_USER -c 'cpanm -M file:///usr/local/src --installdeps --notest --quiet .'
+# runuser -l $CHERRYEPG_USER -c 'cpanm -M file:///usr/local/src --installdeps --notest --quiet .'
 
 # get cherryTools
 cd $CHERRYEPG_HOME
